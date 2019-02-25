@@ -1,0 +1,92 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[10pt,a4paper]{altacv}
+
+\usepackage[english]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato}
+
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+
+\definecolor{Dassault}{HTML}{154364}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{accent}{Dassault}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\hypersetup{pdftitle={CV},pdfauthor={Tianyi Li},pdfkeywords={PhD, R\&D, multiphysics, numerical simulation, scientific computing, programming}}
+
+\begin{document}
+\name{Tianyi \underline{Li}}
+\tagline{PhD, R\&D engineer in multiphysics, numerical simulation and scientific computing}
+\photo{2.8cm}{photo.jpg}
+\personalinfo{%
+  \email{\href{mailto:tianyikillua@gmail.com}{tianyikillua@gmail.com}}
+  \phone{0033 6 46 77 76 90}
+  \location{Paris 12e, FRANCE}
+  \\
+  \linkedin{\href{https://www.linkedin.com/in/tianyikillua}{linkedin.com/in/tianyikillua}}
+  \github{\href{https://github.com/tianyikillua}{github.com/tianyikillua}}
+  \printinfo{\faCheck}{\href{https://raw.githubusercontent.com/tianyikillua/cv/master/cv.pdf}{latest version of this CV}}
+}
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+\cvsection[cv_sidebar]{Experiences}
+
+\cvevent{Research and Development Engineer}{\href{https://promold.fr}{Promold} \hfill\textcolor{body}{\normalfont TPE -- consulting in simulation methods for plastics}}{Apr 2017 --}{Paris 17e, FRANCE}
+\begin{itemize}
+\item Multiscale rheological and mechanical modeling of fiber-reinforced polymers: anisotropic viscosity and material failure domain
+\item Code implementation under \textbf{Moldflow} for process simulation using \textbf{C++}, and under \textbf{Optistruct} / \textbf{code\_aster} for structural analysis using \textbf{UMAT} / \textbf{Fortran}
+\item Development of information transfer methodology between process and structural analysis; creation of a GUI-based toolbox using \textbf{Python}
+\item Development of business-oriented tools: procedure automation, pre and post-processing of data (\textbf{ParaView}), batch generation
+\end{itemize}
+
+\divider
+
+\cvevent{Junior Research Engineer (PhD Candicate)}{\href{http://www.imsia.cnrs.fr}{IMSIA} \hfill\textcolor{body}{\normalfont PME -- applied research lab between CNRS, CEA and EDF}}{Oct 2013 -- Sep 2016}{Palaiseau (91), FRANCE}
+\begin{itemize}
+\item Dynamic fracture modeling of brittle materials for concrete structures, with a novel non-local constitutive behavior
+\item Code implementation in an industrial explicit dynamics finite element program \textbf{Europlexus} using \textbf{Fortran}
+\item Design and implementation of parallel computing architecture using \textbf{MPI} and \textbf{PETSc}
+\item Contributions to the open-source scientific computing libraries \textbf{FEniCS} and \textbf{PETSc} using \textbf{C++}
+\end{itemize}
+
+\divider
+
+\cvevent{Numerical Simulation Engineer}{\href{https://promold.fr}{Promold} \hfill\textcolor{body}{\normalfont TPE -- consulting in simulation methods for plastics}}{Apr 2013 -- Aug 2013}{Paris 17e, FRANCE}
+\begin{itemize}
+\item Fiber orientation modeling for process (injection molding) simulation of fiber-reinforced polymers with \textbf{Moldflow}
+\item Integrative structural analysis under \textbf{Optistruct} and \textbf{Radioss} with process-induced microstructural properties using \textbf{Digimat}
+\item Development of business-oriented tools under \textbf{HyperWorks} using \textbf{Python} and \textbf{TCL}
+\end{itemize}
+
+\divider
+
+\cvevent{Structural Analysis Engineer (Intern)}{\href{https://www.faurecia.com}{Faurecia Interior Systems} \hfill\textcolor{body}{\normalfont GE -- automotive equipment supplier}}{Sep 2012 -- Feb 2013}{Méru (60), FRANCE}
+\begin{itemize}
+\item Elastoplastic constitutive modeling of long-fiber reinforced thermoplastics for the automobile industry
+\item Numerical analysis and code implementation using \textbf{Python}
+\item Static, modal and dynamic structural analysis under \textbf{Abaqus}
+\end{itemize}
+
+\divider
+
+\cvevent{Mechanical Design Engineer (Intern)}{\href{http://www.aml-systems.com}{AML-Systems} \hfill\textcolor{body}{\normalfont PME -- automotive equipment supplier}}{Sep 2011 -- Feb 2012}{Le Bourget (93), FRANCE}
+\begin{itemize}
+\item Design and static analysis of headlamp cleaning systems using \textbf{Catia}
+\item Analysis of experimental data using \textbf{Matlab}
+\end{itemize}
+
+\end{document}
