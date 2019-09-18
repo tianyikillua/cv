@@ -1,19 +1,27 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[margin=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{natbib}
 \usepackage{bibentry}
-\begin{document}
-  \nobibliography{../Bibliography/library.bib}
-  \bibliographystyle{unsrt}
+\usepackage{hyperref}
+\hypersetup{unicode=true,pdftitle=Publications and work,pdfauthor=Tianyi Li,colorlinks=true,linkcolor=black,urlcolor=black,breaklinks=true}
 
-  \section*{Publications in peer-reviewed journals}
-  \begin{enumerate}
-    \item \bibentry{Li:2015}
-    \item \bibentry{Li:2016a}
-    \item \bibentry{Li:2016b}
-    \item \bibentry{Li:2016c}
-    \item \bibentry{Li:2016d}
-    \item \bibentry{Tanne:2018}
-    \item \bibentry{Li:2018a}
-    \item \bibentry{Li:2019}
-  \end{enumerate}
+\begin{document}
+\nobibliography{../Bibliography/library.bib}
+\bibliographystyle{unsrt}
+
+\section*{Publications in peer-reviewed journals}
+\begin{enumerate}
+\item \bibentry{Li:2019}
+\item \bibentry{Li:2018a}
+\item \bibentry{Tanne:2018}
+\item \bibentry{Li:2016d}
+\item \bibentry{Li:2016c}
+\item \bibentry{Li:2016b}
+\item \bibentry{Li:2016a}
+\item \bibentry{Li:2015}
+\end{enumerate}
+
 \end{document}
