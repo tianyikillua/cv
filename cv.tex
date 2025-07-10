@@ -1,99 +1,116 @@
-\PassOptionsToPackage{dvipsnames}{xcolor}
-\documentclass[10pt,a4paper]{altacv}
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
-\usepackage[english]{babel}
-\usepackage[hidelinks]{hyperref}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[default]{lato}
-\usepackage{microtype}
-\usepackage{fancyhdr}
+\usepackage{paracol}
 
-\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1cm,bottom=0.5cm,headsep=15pt}
+\usepackage[rm]{roboto}
+\usepackage[defaultsans]{lato}
+\renewcommand{\familydefault}{\sfdefault}
 
-\definecolor{Dassault}{HTML}{154364}
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666}
-\colorlet{accent}{Dassault}
-\colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
-
-\renewcommand{\itemmarker}{{\small\textbullet}}
-\renewcommand{\ratingmarker}{\faCircle}
-
-\hypersetup{pdftitle={CV},pdfauthor={Tianyi Li},pdfkeywords={PhD, R\&D, multiphysics, numerical simulation, scientific computing, programming}}
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
 
 \begin{document}
 \name{Tianyi \underline{LI}}
-\tagline{PhD, R\&D engineer in multiphysics, numerical simulation and scientific computing}
+\tagline{Research engineer in multiphysics and multiscale simulation methods}
 \photo{2.5cm}{photo.jpg}
-\personalinfo{%
-  \email{\href{mailto:tianyikillua@gmail.com}{tianyikillua@gmail.com}}
-  \phone{\href{tel:+33646777690}{+33 6 46 77 76 90}}
-  \location{\href{https://www.google.com/maps/place/12e+Arrondissement}{Paris 12e, FRANCE}}
-  \\
-  \linkedin{\href{https://www.linkedin.com/in/tianyikillua}{linkedin.com/in/tianyikillua}}
-  \github{\href{https://github.com/tianyikillua}{github.com/tianyikillua}}
-  \printinfo{\faQuestion}{\href{https://github.com/tianyikillua/cv/blob/master/cv.pdf}{check latest version of this CV}}
+\personalinfo{
+  \email{tianyikillua@gmail.com}
+  \location{Montrouge, France}
+  \printinfo{\faBook}{\href{https://scholar.google.com/citations?user=jnOm13oAAAAJ}{google scholar}}
+  \linkedin{tianyikillua}
+  \github{tianyikillua}
 }
 
-\pagestyle{fancy}
-\fancyheadoffset{8cm}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\rhead{\scriptsize\color{body} updated on \today}
-
-%% Make the header extend all the way to the right, if you want.
-\begin{fullwidth}
 \makecvheader
-\end{fullwidth}
 
 %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
 \AtBeginEnvironment{itemize}{\small}
 
-\cvsection[cv_sidebar]{Experiences}
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
 
-\cvevent{Research and Development Engineer\hfill\textcolor{body}{\normalfont\normalsize permanent (\emph{CDI})}}{\href{https://promold.fr}{Promold} \hfill\textcolor{body}{\normalfont \emph{PME} -- consulting in industrial simulation}}{Apr -- Aug 2013, Apr 2017 -- now}{Paris 9e, FRANCE}
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experiences}
+
+\cvevent{Simulation Technology Specialist}{\href{https://www.3ds.com}{Dassault Systèmes}}{Jan 2020 -- now}{Vélizy-Villacoublay, France}
 \begin{itemize}
-\item Fiber orientation modeling for process (injection molding) simulation of fiber-reinforced polymers with \textbf{Moldflow} and \textbf{Moldex3D}
-\item Integrative structural analysis under \textbf{Optistruct} / \textbf{Radioss} / \textbf{code\_aster} with process-induced microstructural properties using \textbf{Digimat}
-\item Improved multiscale rheological (fluid) and thermomechanical (solid) modeling of fiber-reinforced polymers: anisotropic viscosity, fiber orientation, structural buckling, porosity prediction and material failure behavior
-\item Material model implementation for process simulation using \textbf{C++}, and for structural analysis using \textbf{UMAT} / \textbf{Fortran}
-\item Uncertainty propagation for injection molding simulations using \textbf{OpenTURNS} and \emph{data-driven} techniques (model reduction, sampling\ldots)
-\item Development of various GUI-based simulation tools using \textbf{Python} / \textbf{C++}
+\item Collaborations with \textbf{CATIA} and \textbf{SIMULIA} brands
+\end{itemize}
+
+\divider
+
+\cvevent{Research and Development Engineer}{Promold}{Apr 2017 -- Dec 2019}{Paris, France}
+\begin{itemize}
+\item Injection molding (process) and integrative multiscale (structural) simulations of fiber-reinforced polymers with \textbf{Moldflow}, \textbf{Moldex3D}, \textbf{Optistruct}, \textbf{Radioss}, \textbf{code\_aster} and \textbf{Digimat}
+\item \textbf{Rheological} and \textbf{thermomechanical modeling} of fiber-reinforced composites: anisotropic fiber-dependent viscosity, fiber orientation and homogenization methods. Code development using \textbf{C++}
+\item Uncertainty propagation for injection molding simulations using \emph{data-driven} surrogates
+\item Development of various GUI-based simulation tools using \textbf{Python}
   \begin{itemize}
-    \item Implementing an integrative simulation methodology between process and product structural analysis
-    \item Implementing a novel global adaptive optimization methodology of fiber orientation model parameters for a better correlation with experiment
-    \item For buckling analysis of anisotropic fiber-reinforced materials (with finite element library \textbf{FEniCS} and eigenvalue solver \textbf{SLEPc})
+    \item Integrative multiscale simulation methodology from process to structural analysis: results \textbf{mapping}, \textbf{mean-field homogenizaton} methods of fiber composites
+    \item Adaptive optimization methodology of fiber orientation model parameters using \textbf{Kriging} and \textbf{Expected Improvement}
+    \item Buckling analysis of fiber-reinforced materials with finite element library \textbf{FEniCS} and eigenvalue solver \textbf{SLEPc}
   \end{itemize}
-\item Development of scientific computing tools: procedure automation under \textbf{HyperWorks} using \textbf{TCL}; \textbf{Docker} deployment for launching simulations across systems; post-processing of simulation results under \textbf{ParaView} with \textbf{Python}; statistical data analysis and visualization under \textbf{Python/Jupyterlab}
+\item Development of scientific computing tools: procedure automation under \textbf{HyperWorks} using \textbf{TCL}; \textbf{Docker} deployment; post-processing of simulation results under \textbf{ParaView}; data analysis and visualization under \textbf{Jupyter}
 \end{itemize}
 
 \divider
 
-\cvevent{Junior Research Engineer (PhD Candicate)\hfill\textcolor{body}{\normalfont\normalsize fixed term (\emph{CDD})}}{\href{http://www.imsia.cnrs.fr}{IMSIA (CNRS-EDF-CEA)} \hfill\textcolor{body}{\normalfont \emph{PME} -- applied research lab}}{Oct 2013 -- Sep 2016}{Palaiseau (91), FRANCE}
+\cvevent{PhD Candidate in Solid Mechanics}{\href{https://imsia.ip-paris.fr}{IMSIA (CNRS-EDF-ENSTA research lab)}}{Oct 2013 -- Sep 2016}{Palaiseau, France}
 \begin{itemize}
-\item Dynamic fracture modeling of brittle materials for concrete structures, with a novel non-local constitutive behavior for a better prediction and understanding of crack propagation behavior
-\item Structural analysis, and model implementation in an industrial explicit dynamics finite element program \textbf{Europlexus} using \textbf{Fortran}
-\item Design and implementation of parallel computing architecture using \textbf{MPI} and \textbf{PETSc} under \textbf{Europlexus}, quasi-perfect scaling efficiency achieved
-\item Contributions to the open-source scientific computing libraries \textbf{FEniCS} and \textbf{PETSc} using \textbf{C++}
+\item \textbf{Phase-field fracture} modeling of brittle materials: variational formulation and numerical simulations (\href{https://pastel.archives-ouvertes.fr/tel-01487449}{\faLink\textbf{PhD thesis}})
+\item Code development in an industrial explicit dynamics finite software \textbf{Europlexus} using \textbf{PETSc} (\textbf{Fortran}): quasi-perfect scaling efficiency obtained
+\item Contributions to the open-source finite element library \textbf{FEniCS} (\textbf{C++})
 \end{itemize}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Most proud of}
+
+\cvachievement{\faCodeBranch}{\href{https://support.3ds.com/knowledge-base/?q=docid:QA00000420397}{7 reviewed research articles}}{\href{https://scholar.google.com/citations?user=jnOm13oAAAAJ}{and more than 130 citations since}}
 
 \divider
 
-\cvevent{Structural Analysis Engineer\hfill\textcolor{body}{\normalfont\normalsize intern}}{\href{https://www.faurecia.com}{Faurecia Interior Systems} \hfill\textcolor{body}{\normalfont \emph{GE} -- automotive equipment supplier}}{Sep 2012 -- Feb 2013}{Méru (60), FRANCE}
-\begin{itemize}
-\item Elastoplastic constitutive modeling of long-fiber reinforced thermoplastics for the automobile industry, better agreement with experiment achieved
-\item Numerical analysis and model implementation using \textbf{Python}
-\item Static, modal and dynamic structural analysis under \textbf{Abaqus}
-\end{itemize}
+\cvachievement{\faBullhorn}{Given a speech in front of 900 people}{and engaged in \href{http://eqdifference.org}{Eloquence de la Différence}}
+
+\cvsection{Strengths}
+
+\cvtag{Nonlinear mechanics} \cvtag{Computational mechanics} \cvtag{Scientific machine learning} \cvtag{Programming} \cvtag{CAE tools} \cvtag{Scientific communication} \\ \cvtag{Listening and empathy}
+
+\cvsection{Typical day at work}
+
+\wheelchart{1cm}{0.2cm}{
+  1/4em/accent!80/{\\[1em]Play with equations},
+  1/5em/accent!70/{Read papers},
+  2/6em/accent!60/{Coding},
+  1/7em/accent!50/{Brainstorming},
+  1/8em/accent!30/{Draw beautiful graphs},
+  1/8em/accent!30/{Write reports},
+  0.5/8em/accent!20/{\\[1em]Guide new minds}
+}
+
+\cvsection{Languages}
+
+\cvskill{Chinese}{5}
 
 \divider
 
-\cvevent{Mechanical Design Engineer \hfill\textcolor{body}{\normalfont\normalsize intern}}{\href{http://www.aml-systems.com}{AML-Systems} \hfill\textcolor{body}{\normalfont \emph{PME} -- automotive equipment supplier}}{Sep 2011 -- Feb 2012}{Le Bourget (93), FRANCE}
-\begin{itemize}
-\item Design and static analysis of headlamp cleaning systems using \textbf{Catia}
-\item Analysis of experimental data using \textbf{Matlab}
-\end{itemize}
+\cvskill{French / English}{4}
+
+\cvsection{Education}
+
+\cvevent{PhD in Solid Mechanics}{\href{https://www.polytechnique.edu}{Univ. Paris-Saclay (Ecole Polytechnique)}}{2013 -- 2016}{Palaiseau, France}
+
+\divider
+
+\cvevent{Engineer in Mechanics}{\href{https://www.utc.fr}{Université de Technologie de Compiègne}}{2010 -- 2013}{Compiègne, France}
+
+\divider
+
+\cvevent{Bachelor in Mechanics}{\href{https://utseus.shu.edu.cn/en.htm}{Université de Technologie Sino-Européenne de Shanghai}}{2007 -- 2010}{Shanghai, China}
+
+\end{paracol}
 
 \end{document}
