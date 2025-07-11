@@ -50,7 +50,7 @@
 }
 \RequirePackage{xparse}
 \RequirePackage[margin=2cm]{geometry}
-\RequirePackage[fixed]{fontawesome5}%[2020-01-15]
+\RequirePackage[fixed]{fontawesome6}%[2020-01-15]
 
 % 1.7.3 For backward compatibility
 \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
@@ -113,7 +113,7 @@
 \let\itemmarker\cvItemMarker      % for backward compatibility
 \let\ratingmarker\cvRatingMarker  % for backward compatibility
 \newcommand{\cvDateMarker}{\faCalendar[regular]}
-\newcommand{\cvLocationMarker}{\faMapMarker}
+\newcommand{\cvLocationMarker}{\faMapPin}
 \newcommand{\locationname}{Location}
 \newcommand{\datename}{Date}
 
